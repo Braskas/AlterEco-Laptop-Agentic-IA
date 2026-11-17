@@ -17,6 +17,16 @@ npm run build
 - `/ecrans` : sommaire des 43 écrans, bascule Jour/Nuit, remise à zéro de la base.
 - `/composants` : chaque composant dans toutes ses variantes Figma.
 
+## Mettre en ligne (Vercel, gratuit)
+
+1. Sur [vercel.com](https://vercel.com), connecte-toi avec GitHub puis **Add New… → Project** et importe le dépôt.
+2. **Root Directory** : `app` (bouton *Edit*). Le reste est lu dans `app/vercel.json`.
+3. Laisse cochée l'option qui inclut les fichiers hors du dossier racine : le build lit `../design-system/tokens.css`.
+4. **Deploy**. Chaque commit sur `main` redéploie ; chaque autre branche reçoit une URL d'aperçu.
+
+`vercel.json` renvoie toutes les adresses vers `index.html`, pour qu'un lien direct (`/foyer`, `/carte?…`) ou un rechargement ne donne pas de 404.
+À partager aux testeurs : `/onboarding/bienvenue` (`/ecrans` et `/composants` sont des outils de revue).
+
 ## Où mettre quoi
 
 | Dossier | Contenu | Règle |
