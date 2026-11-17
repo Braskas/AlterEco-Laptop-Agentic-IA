@@ -1,12 +1,12 @@
-# Spécifications techniques – Le Réflexe (concept A)
+# Spécifications techniques – Hooka (concept A)
 
 17 novembre 2026
 
 ## 1. Contexte et objectifs
 
-Le Réflexe est une application mobile qui propose, au moment du choix, une alternative écologique adaptée au budget, au lieu et au temps de l'utilisateur (25-35 ans). Le MVP couvre trois domaines : alimentation, seconde main (tous types d'objets) et énergie. Le nom de l'app reste à définir.
+Hooka est une application mobile qui propose, au moment du choix, une alternative écologique adaptée au budget, au lieu et au temps de l'utilisateur (25-35 ans). Le MVP couvre trois domaines : alimentation, seconde main (tous types d'objets) et énergie. Le nom de l'app reste à définir.
 
-Ce document dit ce que l'équipe de développement doit construire pour le concept A. Il découle du parcours « Le Réflexe » validé en userflow. La stack, les partenaires de données et la volumétrie ne sont pas arrêtés : ils figurent comme décisions ouvertes (sections 2 et 14).
+Ce document dit ce que l'équipe de développement doit construire pour le concept A. Il découle du parcours « Hooka » validé en userflow. La stack, les partenaires de données et la volumétrie ne sont pas arrêtés : ils figurent comme décisions ouvertes (sections 2 et 14).
 
 | HMW | Traduction technique |
 | --- | --- |
