@@ -1,0 +1,56 @@
+{
+ "v": 3,
+ "layout": "files",
+ "createdOnFiles": {
+  "at": "2026-11-17T10:07:31.929Z",
+  "v": 1
+ },
+ "title": "Hooka",
+ "namespace": "Hooka",
+ "libraries": [],
+ "sections": {},
+ "groups": [
+  "Logos"
+ ],
+ "assetGroups": {
+  "Logos": {
+   "name": "Logos",
+   "tile": "l",
+   "order": [
+    "hooka-wordmark-ink.svg",
+    "hooka-wordmark-cream.svg",
+    "hooka-symbol.svg"
+   ],
+   "files": {
+    "hooka-wordmark-ink.svg": {
+     "name": "hooka-wordmark-ink.svg",
+     "blob": "4960a74eea1702493178d4a08f63fb67",
+     "size": 839,
+     "type": "image/svg+xml"
+    },
+    "hooka-wordmark-cream.svg": {
+     "name": "hooka-wordmark-cream.svg",
+     "blob": "d5edb9355d05a2320a6c6ab9879f5bcd",
+     "size": 839,
+     "type": "image/svg+xml"
+    },
+    "hooka-symbol.svg": {
+     "name": "hooka-symbol.svg",
+     "blob": "e6851aa706804e0101bf3b0280a06af5",
+     "size": 439,
+     "type": "image/svg+xml"
+    }
+   }
+  }
+ },
+ "blobs": {},
+ "docs": {
+  "sections": []
+ },
+ "lastChange": {
+  "by": "Claude",
+  "at": "2026-11-17T11:30:00Z",
+  "via": "claude.ai",
+  "note": "Logo droit et géométrique, palette rose et violet"
+ }
+}

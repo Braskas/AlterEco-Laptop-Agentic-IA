@@ -1,0 +1,62 @@
+<!-- @dsCard group="Identité" height=430 subtitle="Wordmark, symbole et fonds autorisés" -->
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; padding: var(--space-5); background: var(--bg); color: var(--ink); font-family: var(--font-sans); }
+  h2 { font: 700 14px/16px var(--font-sans); margin: 0 0 var(--space-3); color: var(--ink-soft); }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); }
+  .tile { display: flex; align-items: center; justify-content: center; min-height: 112px; padding: var(--space-5); border: 1px solid var(--hairline); border-radius: var(--radius-lg); }
+  .on-bg { background: var(--bg); color: var(--ink); }
+  .on-ink { background: var(--ink); color: var(--bg); }
+  .on-rose { background: var(--rose); color: var(--on-rose); }
+  .on-violet { background: var(--violet); color: var(--on-violet); }
+  .on-blush { background: var(--blush); color: var(--on-blush); }
+  .on-lilac { background: var(--lilac); color: var(--on-lilac); }
+  .sizes { display: flex; align-items: flex-end; gap: var(--space-5); margin-top: var(--space-5); }
+  .cap { font: 500 13px/18px var(--font-sans); color: var(--ink-soft); margin-top: var(--space-1); }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="hk-word" viewBox="0 0 510 140">
+    <clipPath id="hk-xh"><rect x="0" y="50" width="600" height="80"/></clipPath>
+    <g fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="butt" stroke-linejoin="miter">
+      <path d="M30 10V130"/><path d="M30 96V92C30 72 42 60 62 60C82 60 92 72 92 92V130"/>
+      <circle cx="162" cy="90" r="30"/><circle cx="252" cy="90" r="30"/>
+      <path d="M312 10V130"/>
+      <g clip-path="url(#hk-xh)"><path d="M316 98L378 36"/><path d="M336 78L398 140"/></g>
+      <circle cx="450" cy="90" r="30"/><path d="M480 50V130"/>
+    </g>
+    <g fill="currentColor"><circle cx="169" cy="90" r="9"/><circle cx="259" cy="90" r="9"/></g>
+  </symbol>
+  <symbol id="hk-sym" viewBox="0 0 512 512">
+    <rect width="512" height="512" rx="112" fill="#FF3E8E"/>
+    <g fill="none" stroke="#17131F" stroke-width="30"><circle cx="186" cy="256" r="62"/><circle cx="348" cy="256" r="62"/></g>
+    <g fill="#17131F"><circle cx="202" cy="256" r="22"/><circle cx="364" cy="256" r="22"/></g>
+  </symbol>
+</svg>
+
+<h2>Wordmark sur les fonds autorisés</h2>
+<div class="grid">
+  <div class="tile on-bg"><svg width="200" height="55" role="img" aria-label="hooka"><use href="#hk-word"/></svg></div>
+  <div class="tile on-ink"><svg width="200" height="55" role="img" aria-label="hooka"><use href="#hk-word"/></svg></div>
+  <div class="tile on-rose"><svg width="200" height="55" role="img" aria-label="hooka"><use href="#hk-word"/></svg></div>
+  <div class="tile on-violet"><svg width="200" height="55" role="img" aria-label="hooka"><use href="#hk-word"/></svg></div>
+  <div class="tile on-blush"><svg width="200" height="55" role="img" aria-label="hooka"><use href="#hk-word"/></svg></div>
+  <div class="tile on-lilac"><svg width="200" height="55" role="img" aria-label="hooka"><use href="#hk-word"/></svg></div>
+</div>
+
+<h2 style="margin-top: var(--space-6)">Symbole</h2>
+<div class="sizes">
+  <div><svg width="96" height="96" role="img" aria-label="Hooka"><use href="#hk-sym"/></svg><div class="cap">96 px</div></div>
+  <div><svg width="56" height="56" role="img" aria-label="Hooka"><use href="#hk-sym"/></svg><div class="cap">56 px</div></div>
+  <div><svg width="29" height="29" role="img" aria-label="Hooka"><use href="#hk-sym"/></svg><div class="cap">29 px</div></div>
+  <div><svg width="24" height="24" role="img" aria-label="Hooka"><use href="#hk-sym"/></svg><div class="cap">24 px (minimum)</div></div>
+</div>
+</body>
+</html>

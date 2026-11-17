@@ -1,0 +1,52 @@
+<!-- @dsCard height=320 -->
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Figtree:wght@500&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; background: var(--bg); }
+  svg { display: block; width: 960px; height: 320px; }
+  .ground { fill: var(--bg); }
+  .b-rose { fill: var(--rose); rx: var(--radius-lg); }
+  .b-violet { fill: var(--violet); }
+  .b-blush { fill: var(--blush); rx: var(--radius-lg); }
+  .b-lilac { fill: var(--lilac); }
+  .b-ink { fill: var(--ink); }
+  .dot { fill: var(--bg); }
+  .name { font-family: var(--font-display); font-weight: 700; font-size: 104px; letter-spacing: -0.03em; fill: var(--ink); }
+  .tag { font-family: var(--font-sans); font-weight: 500; font-size: 14px; fill: var(--ink-soft); }
+</style>
+</head>
+<body>
+<svg viewBox="0 0 960 320" role="img" aria-label="Hooka — Le bon réflexe, en 30 secondes">
+  <!--
+    Blocs : rose 224x256 (7x8 pas de 32, radius-lg), violet pilule de 160 de large (rayon 80), blush 224x112 (radius-lg), lilac pilule 96x192 (rayon 48), ink disque de 96 (rayon 48).
+    Arrangement : dalle rose en haut, pilule violet verticale qui sort par le bas, blush sous la dalle, lilac et ink qui sortent par la droite ; écarts de 16 (space-4).
+    Motif : disques, parce que la marque est ronde et douce (radius-pill, yeux du logo) : 36 disques de rayon 8 (space-2) au pas de 32 (space-6), le fond découpé dans la dalle rose.
+    Pas : 32, 16, 8 ; rayons : radius-lg (20), pilules et disques à la moitié du petit côté.
+  -->
+  <rect class="ground" width="960" height="320"/>
+
+  <rect class="b-rose" x="480" y="-32" width="224" height="256" rx="20"/>
+  <g>
+    <circle class="dot" cx="512" cy="32" r="8"/><circle class="dot" cx="544" cy="32" r="8"/><circle class="dot" cx="576" cy="32" r="8"/><circle class="dot" cx="608" cy="32" r="8"/><circle class="dot" cx="640" cy="32" r="8"/><circle class="dot" cx="672" cy="32" r="8"/>
+    <circle class="dot" cx="512" cy="64" r="8"/><circle class="dot" cx="544" cy="64" r="8"/><circle class="dot" cx="576" cy="64" r="8"/><circle class="dot" cx="608" cy="64" r="8"/><circle class="dot" cx="640" cy="64" r="8"/><circle class="dot" cx="672" cy="64" r="8"/>
+    <circle class="dot" cx="512" cy="96" r="8"/><circle class="dot" cx="544" cy="96" r="8"/><circle class="dot" cx="576" cy="96" r="8"/><circle class="dot" cx="608" cy="96" r="8"/><circle class="dot" cx="640" cy="96" r="8"/><circle class="dot" cx="672" cy="96" r="8"/>
+    <circle class="dot" cx="512" cy="128" r="8"/><circle class="dot" cx="544" cy="128" r="8"/><circle class="dot" cx="576" cy="128" r="8"/><circle class="dot" cx="608" cy="128" r="8"/><circle class="dot" cx="640" cy="128" r="8"/><circle class="dot" cx="672" cy="128" r="8"/>
+    <circle class="dot" cx="512" cy="160" r="8"/><circle class="dot" cx="544" cy="160" r="8"/><circle class="dot" cx="576" cy="160" r="8"/><circle class="dot" cx="608" cy="160" r="8"/><circle class="dot" cx="640" cy="160" r="8"/><circle class="dot" cx="672" cy="160" r="8"/>
+    <circle class="dot" cx="512" cy="192" r="8"/><circle class="dot" cx="544" cy="192" r="8"/><circle class="dot" cx="576" cy="192" r="8"/><circle class="dot" cx="608" cy="192" r="8"/><circle class="dot" cx="640" cy="192" r="8"/><circle class="dot" cx="672" cy="192" r="8"/>
+  </g>
+
+  <rect class="b-violet" x="720" y="48" width="160" height="300" rx="80"/>
+  <rect class="b-blush" x="480" y="240" width="224" height="112" rx="20"/>
+  <rect class="b-lilac" x="896" y="-48" width="96" height="192" rx="48"/>
+  <rect class="b-ink" x="896" y="160" width="96" height="96" rx="48"/>
+
+  <text class="name" x="40" y="236">Hooka</text>
+  <text class="tag" x="44" y="268">Le bon réflexe, en 30 secondes.</text>
+</svg>
+</body>
+</html>

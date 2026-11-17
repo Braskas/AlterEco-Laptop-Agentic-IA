@@ -1,0 +1,37 @@
+<!-- @dsCard group="Actions" height=330 subtitle="Principal, secondaire, impact, états" -->
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; padding: var(--space-5); background: var(--bg); color: var(--ink); font-family: var(--font-sans); }
+  h2 { font: 700 14px/16px var(--font-sans); margin: 0 0 var(--space-3); color: var(--ink-soft); }
+  .row { display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center; margin-bottom: var(--space-6); }
+</style>
+</head>
+<body>
+<h2>Variantes</h2>
+<div class="row">
+  <button class="hk-btn hk-btn--primary">Je fonce</button>
+  <button class="hk-btn">Voir autre chose</button>
+  <button class="hk-btn hk-btn--impact">Voir mon impact</button>
+  <a class="hk-link" href="#">Pourquoi ce choix ?</a>
+</div>
+
+<h2>États</h2>
+<div class="row">
+  <button class="hk-btn hk-btn--primary" style="transform:translateY(-1px);box-shadow:var(--lift-sm)">Survol</button>
+  <button class="hk-btn hk-btn--primary" style="filter:brightness(0.94)">Appuyé</button>
+  <button class="hk-btn hk-btn--primary" style="outline:var(--stroke-2) solid var(--focus);outline-offset:3px">Focus</button>
+  <button class="hk-btn hk-btn--primary" disabled>Désactivé</button>
+</div>
+
+<h2>Grande taille</h2>
+<div class="row">
+  <button class="hk-btn hk-btn--primary hk-btn--lg">Trouver mon Hook</button>
+</div>
+</body>
+</html>
