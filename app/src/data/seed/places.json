@@ -1,0 +1,6 @@
+[
+  { "id": "p-epicerie-coin", "name": "Épicerie du Coin", "address": "rayon frais", "distanceM": 0, "walkMinutes": 0, "hours": "ouvert jusqu’à 20 h" },
+  { "id": "p-ressourcerie-pentes", "name": "Ressourcerie des Pentes", "address": "Rue de Marseille, Lyon 7e", "distanceM": 900, "walkMinutes": 11, "hours": "ouvert jusqu’à 19 h" },
+  { "id": "p-friperie-guillotiere", "name": "Friperie Guillotière", "address": "Grande Rue de la Guillotière, Lyon 7e", "distanceM": 1400, "walkMinutes": 17, "hours": "ouvert jusqu’à 19 h 30" },
+  { "id": "p-cordonnerie-jean-mace", "name": "Atelier Jean Macé", "address": "Avenue Jean Jaurès, Lyon 7e", "distanceM": 3200, "walkMinutes": 38, "hours": "ouvert jusqu’à 18 h" }
+]

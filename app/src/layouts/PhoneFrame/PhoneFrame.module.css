@@ -1,0 +1,48 @@
+.stage {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+}
+
+.phone {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100dvh;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: var(--space-5) var(--space-4);
+  overflow-y: auto;
+}
+
+.footer {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-4) var(--space-6);
+}
+
+/* Desktop : maquette centrée à la taille Figma */
+@media (min-width: 600px) {
+  .stage {
+    padding: var(--space-6);
+    background: var(--brume);
+  }
+
+  .phone {
+    width: 393px;
+    min-height: 0;
+    height: 852px;
+    border-radius: 44px;
+    box-shadow: var(--lift);
+    overflow: hidden;
+  }
+}

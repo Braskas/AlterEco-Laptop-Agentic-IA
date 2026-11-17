@@ -1,0 +1,8 @@
+[
+  { "id": "alimentation", "label": "Alimentation", "active": true },
+  { "id": "seconde-main", "label": "Seconde main", "active": true },
+  { "id": "energie", "label": "Énergie", "active": true },
+  { "id": "deplacements", "label": "Déplacements", "active": false },
+  { "id": "numerique", "label": "Numérique", "active": false },
+  { "id": "maison", "label": "Maison", "active": false }
+]

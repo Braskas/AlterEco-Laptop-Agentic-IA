@@ -1,5 +1,7 @@
 # Hooka
 
+> L'app développée (React + TypeScript + CSS Modules, base fictive) est dans [`app/`](app/README.md) : `cd app && npm install && npm run dev`.
+
 ## Accroche 
 Et si l'écologie arrêtait d'être une longue liste de bonnes intentions, pour devenir une action concrète à faire dès aujourd'hui dans votre foyer ?
 

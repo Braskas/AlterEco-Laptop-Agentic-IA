@@ -1,0 +1,9 @@
+[
+  { "id": "s-prix-epicerie", "name": "Relevé Hooka", "url": "https://example.org/releves/epicerie-du-coin", "kind": "releve", "label": "Prix relevé", "lastVerifiedAt": "2026-11-12" },
+  { "id": "s-emballages", "name": "ADEME — Base Empreinte", "url": "https://base-empreinte.ademe.fr", "kind": "officielle", "label": "Facteur d’emballage", "lastVerifiedAt": "2026-09-30" },
+  { "id": "s-annonce-perceuse", "name": "Ressourcerie des Pentes", "url": "https://example.org/annonces/perceuse-123", "kind": "annonce", "label": "Annonce vérifiée", "lastVerifiedAt": "2026-11-04" },
+  { "id": "s-chauffage", "name": "ADEME — Se chauffer mieux", "url": "https://agirpourlatransition.ademe.fr", "kind": "officielle", "label": "Estimation officielle", "lastVerifiedAt": "2026-10-15" },
+  { "id": "s-horaires-friperie", "name": "Annuaire local", "url": "https://example.org/annuaire/friperie-guillotiere", "kind": "communautaire", "label": "Horaires relevés", "lastVerifiedAt": "2026-04-10" },
+  { "id": "s-lessive-conteste", "name": "Étude fabricant", "url": "https://example.org/etudes/lessive-froid", "kind": "officielle", "label": "Économie estimée", "lastVerifiedAt": "2026-08-20", "disputed": true },
+  { "id": "s-non-datee", "name": "Blog conso", "url": "https://example.org/blog", "kind": "communautaire", "label": "Conseil", "lastVerifiedAt": null }
+]

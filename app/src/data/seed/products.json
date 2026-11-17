@@ -1,0 +1,9 @@
+[
+  { "id": "prod-yaourt-marque", "barcode": "3033490004743", "name": "Yaourt nature 4 × 125 g", "domain": "alimentation", "price": 1.89 },
+  { "id": "prod-perceuse-neuve", "barcode": "3165140761802", "name": "Perceuse visseuse neuve", "domain": "seconde-main", "price": 89 },
+  { "id": "prod-veste-neuve", "barcode": "3608077000001", "name": "Veste en laine neuve", "domain": "seconde-main", "price": 129 },
+  { "id": "prod-facture-energie", "name": "Facture d’énergie", "domain": "energie" },
+  { "id": "prod-lessive", "barcode": "8001090000002", "name": "Lessive liquide 2 L", "domain": "energie", "price": 9.9 },
+  { "id": "prod-chips", "barcode": "3168930000003", "name": "Chips 150 g", "domain": "alimentation", "price": 2.1 },
+  { "id": "prod-cafe-capsules", "barcode": "7613036000004", "name": "Capsules de café × 10", "domain": "alimentation", "price": 3.9, "sourceUnavailable": true }
+]

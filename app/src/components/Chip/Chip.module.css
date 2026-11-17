@@ -1,0 +1,67 @@
+/* Figma : Hooka/Chip (6:108). Uniquement des tokens de design-system/tokens.css. */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding-block: 6px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Tailles */
+.compact {
+  padding-inline: var(--space-3);
+}
+
+.touch {
+  min-height: 48px;
+  padding-inline: var(--space-4);
+}
+
+/* Variantes */
+.default {
+  background: var(--surface);
+  color: var(--ink);
+  border-color: var(--hairline);
+}
+
+.blush {
+  background: var(--blush);
+  color: var(--on-blush);
+}
+
+.violet {
+  background: var(--violet);
+  color: var(--on-violet);
+}
+
+.lilac {
+  background: var(--lilac);
+  color: var(--on-lilac);
+}
+
+.rose {
+  background: var(--rose);
+  color: var(--on-rose);
+}
+
+/* Version bouton (pastille de choix) */
+button.chip {
+  cursor: pointer;
+}
+
+button.chip[aria-pressed="true"] {
+  border-color: var(--line);
+  border-width: var(--stroke-1);
+}
+
+button.chip:focus-visible {
+  outline: var(--stroke-2) solid var(--focus);
+  outline-offset: 3px;
+}
