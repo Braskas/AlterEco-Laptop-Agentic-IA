@@ -256,12 +256,12 @@ export function ComponentGallery() {
           <DoubleBonus
             money={{ value: "142 €", detail: "dont 54 € sur ta perceuse" }}
             planet={{ value: "38 km", detail: "de voiture évités" }}
-            nextStep="Vrac fait. Prochain : la gourde."
+            nextStep="Vrac fait. Prochain : la gourde."
           />
           <DoubleBonus
             money={{ value: "142 €", detail: "dont 54 € sur ta perceuse" }}
             planet={null}
-            nextStep="Vrac fait. Prochain : la gourde."
+            nextStep="Vrac fait. Prochain : la gourde."
           />
         </div>
       </Section>
@@ -290,7 +290,7 @@ export function ComponentGallery() {
           <Loader />
           <EmptyState
             title="Oups, on a perdu le fil."
-            message="On réessaie ? Tes gains restent visibles."
+            message="On réessaie ? Tes gains restent visibles."
             action={{ label: "Réessayer", onClick: noop }}
           />
         </div>

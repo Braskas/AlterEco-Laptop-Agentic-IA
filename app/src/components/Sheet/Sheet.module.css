@@ -17,6 +17,7 @@
 
 /* Posée en bas du parent positionné le plus proche (le cadre téléphone) */
 .overlay {
+  pointer-events: none;
   position: absolute;
   inset: 0;
   z-index: 10;
@@ -25,18 +26,30 @@
   justify-content: flex-end;
 }
 
+.overlay .sheet,
+.overlay .scrim,
+.overlay .above {
+  pointer-events: auto;
+}
+
 .overlay .sheet {
   animation: rise 0.22s ease-out;
 }
 
-/* Voile : pas de token « scrim » dans le DS, noir à 40 % en attendant d'en créer un. */
+/* Voile clair comme dans Figma (E5.6, E6.2) : le fond de l'écran à 60 %. */
 .scrim {
   position: absolute;
   inset: 0;
   padding: 0;
   border: 0;
-  background: rgb(0 0 0 / 0.4);
+  background: color-mix(in srgb, var(--bg) 60%, transparent);
   cursor: pointer;
+}
+
+/* Toast posé juste au-dessus de la feuille */
+.above {
+  position: relative;
+  padding: 0 var(--space-4) var(--space-3);
 }
 
 @keyframes rise {

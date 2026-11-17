@@ -1,0 +1,188 @@
+/* Figma : E4 · Capture. Le viseur (E4.1, E4.2) est rendu dans le thème sombre. */
+
+.scanTop {
+  display: grid;
+  grid-template-columns: 48px 1fr 48px;
+  align-items: center;
+  margin: 0 calc(-1 * var(--space-2));
+}
+
+.close {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.close:focus-visible {
+  outline: var(--stroke-2) solid var(--focus);
+  outline-offset: 0;
+}
+
+.scanTitle {
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* Viseur : 4 coins en ink, ligne de lecture blush */
+.viewfinder {
+  position: relative;
+  width: 280px;
+  height: 200px;
+  margin-top: var(--space-2);
+}
+
+.corner {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  border: 0 solid var(--ink);
+}
+
+.corner:nth-child(1) {
+  top: 0;
+  left: 0;
+  border-top-width: 2px;
+  border-left-width: 2px;
+}
+
+.corner:nth-child(2) {
+  top: 0;
+  right: 0;
+  border-top-width: 2px;
+  border-right-width: 2px;
+}
+
+.corner:nth-child(3) {
+  bottom: 0;
+  left: 0;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+}
+
+.corner:nth-child(4) {
+  bottom: 0;
+  right: 0;
+  border-bottom-width: 2px;
+  border-right-width: 2px;
+}
+
+.laser {
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  top: 50%;
+  height: 2px;
+  background: var(--blush);
+  animation: scan 1.6s ease-in-out infinite alternate;
+}
+
+@keyframes scan {
+  from {
+    transform: translateY(-40px);
+  }
+  to {
+    transform: translateY(40px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .laser {
+    animation: none;
+  }
+}
+
+.hint {
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--ink);
+}
+
+.demo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: auto;
+}
+
+.sheetTitle {
+  font-family: var(--font-display);
+  font-size: 26px;
+  line-height: 32px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* E4.4 · Demande voix */
+.listening {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-5) 0;
+}
+
+.mic {
+  display: grid;
+  place-items: center;
+  width: 88px;
+  height: 88px;
+  border-radius: var(--radius-pill);
+  background: var(--brume);
+  color: var(--violet);
+}
+
+.mic.active {
+  animation: pulse 1.2s ease-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--lilac);
+  }
+  100% {
+    box-shadow: 0 0 0 18px transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mic.active {
+    animation: none;
+  }
+}
+
+.micLabel {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  color: var(--violet);
+}
+
+/* E4.6 · Facture non lisible */
+.question {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.question > legend {
+  margin-bottom: var(--space-2);
+  padding: 0;
+}

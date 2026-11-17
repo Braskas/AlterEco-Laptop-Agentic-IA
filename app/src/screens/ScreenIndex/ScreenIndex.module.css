@@ -60,3 +60,10 @@
   min-width: 48px;
   color: var(--violet);
 }
+
+button.row {
+  width: 100%;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}

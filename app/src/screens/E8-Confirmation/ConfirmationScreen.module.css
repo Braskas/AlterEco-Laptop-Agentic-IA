@@ -1,0 +1,13 @@
+/* Figma : E8.1 · Confirmation, E8.2 · Premier gain */
+.center {
+  flex: 1;
+  display: grid;
+  place-items: center;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-top: var(--space-6);
+}

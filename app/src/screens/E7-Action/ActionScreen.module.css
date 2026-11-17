@@ -1,0 +1,62 @@
+/* Figma : E7.1 · Action · Lieu, E7.2 · Action · Énergie */
+.center {
+  flex: 1;
+  display: grid;
+  place-items: center;
+}
+
+.meta {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+
+/* Bloc itinéraire : brume, pictogramme et distance en violet (impact / trajet) */
+.route {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-5);
+  background: var(--brume);
+  color: var(--violet);
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.number {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  margin-top: -4px;
+  border-radius: 50%;
+  background: var(--brume);
+  color: var(--violet);
+  font-size: 14px;
+  font-weight: 700;
+}

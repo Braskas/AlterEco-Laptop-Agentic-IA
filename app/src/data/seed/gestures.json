@@ -1,8 +1,44 @@
 [
-  { "id": "g-vrac", "domain": "alimentation", "label": "J’achète en vrac", "praise": "Tu prends déjà le vrac." },
-  { "id": "g-bio-saison", "domain": "alimentation", "label": "Je prends du bio de saison", "praise": "Tu prends déjà du bio de saison." },
-  { "id": "g-occasion", "domain": "seconde-main", "label": "J’achète d’occasion", "praise": "Tu achètes déjà d’occasion." },
-  { "id": "g-reparer", "domain": "seconde-main", "label": "Je fais réparer", "praise": "Tu fais déjà réparer." },
-  { "id": "g-chauffage-19", "domain": "energie", "label": "Chauffage à 19 °C", "praise": "Tu chauffes déjà à 19 °C le jour." },
-  { "id": "g-lessive-30", "domain": "energie", "label": "Lessive à 30 °C", "praise": "Tu laves déjà à 30 °C." }
+  {
+    "id": "g-vrac",
+    "domain": "alimentation",
+    "label": "J’achète en vrac",
+    "praise": "Tu prends déjà le vrac.",
+    "doneLabel": "Tu achètes en vrac"
+  },
+  {
+    "id": "g-bio-saison",
+    "domain": "alimentation",
+    "label": "Je prends du bio de saison",
+    "praise": "Tu prends déjà du bio de saison.",
+    "doneLabel": "Tu prends du bio de saison"
+  },
+  {
+    "id": "g-occasion",
+    "domain": "seconde-main",
+    "label": "J’achète d’occasion",
+    "praise": "Tu achètes déjà d’occasion.",
+    "doneLabel": "Tu achètes d’occasion"
+  },
+  {
+    "id": "g-reparer",
+    "domain": "seconde-main",
+    "label": "Je fais réparer",
+    "praise": "Tu fais déjà réparer.",
+    "doneLabel": "Tu fais réparer"
+  },
+  {
+    "id": "g-chauffage-19",
+    "domain": "energie",
+    "label": "Chauffage à 19 °C",
+    "praise": "Tu chauffes déjà à 19 °C le jour.",
+    "doneLabel": "Tu chauffes à 19 °C"
+  },
+  {
+    "id": "g-lessive-30",
+    "domain": "energie",
+    "label": "Lessive à 30 °C",
+    "praise": "Tu laves déjà à 30 °C.",
+    "doneLabel": "Tu laves à 30 °C"
+  }
 ]

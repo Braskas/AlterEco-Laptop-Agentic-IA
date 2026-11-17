@@ -1,22 +1,18 @@
 {
-  "user": { "id": "demo-anonyme", "createdAt": "2026-11-17T09:41:00Z", "onboardingDone": false },
+  "user": {
+    "id": "demo-anonyme",
+    "createdAt": "2026-11-17T09:41:00Z",
+    "onboardingDone": false
+  },
   "profile": {
     "budget": "equilibre",
-    "city": "Lyon",
-    "postalCode": "69007",
-    "usualStores": ["Épicerie du Coin"],
+    "city": "",
+    "postalCode": "",
+    "usualStores": [],
     "timeBudget": "moyen"
   },
-  "priorityDomains": [
-    { "domain": "alimentation", "rank": 1 },
-    { "domain": "seconde-main", "rank": 2 },
-    { "domain": "energie", "rank": 3 }
-  ],
-  "gestures": [
-    { "gestureId": "g-vrac", "origin": "mini-bilan", "since": "2026-11-17" },
-    { "gestureId": "g-occasion", "origin": "mini-bilan", "since": "2026-11-17" },
-    { "gestureId": "g-chauffage-19", "origin": "mini-bilan", "since": "2026-11-17" }
-  ],
+  "priorityDomains": [],
+  "gestures": [],
   "decisions": [],
   "setAside": [],
   "reports": [],

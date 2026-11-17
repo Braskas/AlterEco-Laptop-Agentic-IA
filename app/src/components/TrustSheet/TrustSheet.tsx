@@ -1,4 +1,4 @@
-import { useId } from "react";
+import { useId, type ReactNode } from "react";
 import type { Certainty } from "../../data/types";
 import { Button } from "../Button";
 import { Sheet } from "../Sheet";
@@ -27,6 +27,8 @@ type TrustSheetProps = {
   onReport: () => void;
   onClose: () => void;
   inline?: boolean;
+  /** Toast affiché au-dessus de la feuille. */
+  above?: ReactNode;
 };
 
 export function TrustSheet({
@@ -38,13 +40,14 @@ export function TrustSheet({
   onReport,
   onClose,
   inline,
+  above,
 }: TrustSheetProps) {
   const titleId = useId();
 
   return (
-    <Sheet onClose={onClose} inline={inline} labelledBy={titleId}>
+    <Sheet onClose={onClose} inline={inline} labelledBy={titleId} above={above}>
       <h2 id={titleId} className={styles.title}>
-        Pourquoi ce choix ?
+        Pourquoi ce choix ?
       </h2>
 
       <Block label="Critères">{criteria}</Block>
@@ -68,7 +71,7 @@ export function TrustSheet({
       <Block label="Mis à jour">{updatedAt}</Block>
 
       <button type="button" className={styles.report} onClick={onReport}>
-        Une info ne va pas ? Dis-le nous.
+        Une info ne va pas ? Dis-le nous.
       </button>
 
       <Button variant="secondary" block onClick={onClose}>

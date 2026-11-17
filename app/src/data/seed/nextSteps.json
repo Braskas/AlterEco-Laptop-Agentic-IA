@@ -1,0 +1,53 @@
+[
+  {
+    "domain": "alimentation",
+    "afterGestureId": "g-vrac",
+    "gestureId": "g-coupe",
+    "title": "Prends le fromage à la coupe",
+    "meta": "Alimentation · même magasin",
+    "chip": "Vrac fait. Prochain : la coupe.",
+    "query": "fromage à la coupe"
+  },
+  {
+    "domain": "alimentation",
+    "gestureId": "g-vrac",
+    "title": "Passe au vrac pour tes yaourts",
+    "meta": "Alimentation · même magasin",
+    "chip": "Prochain : le vrac.",
+    "query": "yaourt"
+  },
+  {
+    "domain": "seconde-main",
+    "afterGestureId": "g-occasion",
+    "gestureId": "g-reparer",
+    "title": "Fais réparer au lieu de racheter",
+    "meta": "Seconde main · Atelier Cordon à 600 m",
+    "chip": "Occasion faite. Prochain : réparer.",
+    "query": "réparer"
+  },
+  {
+    "domain": "seconde-main",
+    "gestureId": "g-occasion",
+    "title": "Cherche d’abord d’occasion",
+    "meta": "Seconde main · Friperie du Marché à 1,2 km",
+    "chip": "Prochain : l’occasion.",
+    "query": "veste"
+  },
+  {
+    "domain": "energie",
+    "afterGestureId": "g-chauffage-19",
+    "gestureId": "g-lessive-30",
+    "title": "Lance la machine à froid",
+    "meta": "Énergie · chez toi",
+    "chip": "19 °C fait. Prochain : la lessive.",
+    "query": "lessive"
+  },
+  {
+    "domain": "energie",
+    "gestureId": "g-chauffage-19",
+    "title": "Baisse le chauffage la nuit",
+    "meta": "Énergie · chez toi",
+    "chip": "Prochain : le chauffage.",
+    "query": "chauffage"
+  }
+]

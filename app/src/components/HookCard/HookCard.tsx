@@ -11,7 +11,7 @@ import styles from "./HookCard.module.css";
 /**
  * Figma : Hooka/HookCard (8:52) — carte unique de décision (E5).
  * Ordre : gain (€, temps) → ce que tu fais déjà → impact (une équivalence)
- *       → source / date / certitude → Je fonce / Pas aujourd'hui / Pourquoi ce choix ?
+ *       → source / date / certitude → Je fonce / Pas aujourd'hui / Pourquoi ce choix ?
  *
  * Reçoit directement la `Card` assemblée par le moteur (engine/recommend.ts).
  */
@@ -98,7 +98,7 @@ export function HookCard({ card, onAccept, onSkip, onWhy }: HookCardProps) {
             Pas aujourd’hui
           </Button>
           <Button variant="link" onClick={onWhy}>
-            Pourquoi ce choix ?
+            Pourquoi ce choix ?
           </Button>
         </div>
       </div>

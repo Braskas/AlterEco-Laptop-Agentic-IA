@@ -55,6 +55,28 @@ npm run build
 `src/styles/global.css` importe `../design-system/tokens.css`. On ne recopie jamais une couleur ou une
 taille en dur. Le thème Nuit = `data-theme="dark"` sur `<html>`, géré par `ThemeContext`.
 
+## Écrans : routes du parcours
+
+Un état Figma (E5.6, E6.1…) n'est pas une copie d'écran : c'est une route avec un paramètre `?vue=`.
+`src/screens/registry.ts` donne, pour chacun des 43 nœuds Figma, sa route (`to`) et son scénario de démo.
+
+| Route | Écrans Figma |
+| --- | --- |
+| `/onboarding/bienvenue` → `domaines` → `budget` → `lieu` → `temps` | E1.1–E1.5 (E1.2b : `?vue=prevenu`) |
+| `/mini-bilan`, `/mini-bilan/bravo` | E2.1, E2.2 |
+| `/accueil` | E3.1 · `?vue=lieu` E3.2 · demande hors domaine E3.3 · `?vue=domaines` E3.4 |
+| `/capture/scan`, `/capture/produit/:id`, `/capture/texte`, `/capture/voix`, `/capture/energie`, `/capture/facture` | E4.1–E4.6, et E1.6 (feuilles de permission) |
+| `/carte?produit=…` ou `?q=…` | E4.7, E5.1–E5.7 selon le moteur · `?vue=passer` E5.6 · `pourquoi` E6.1 · `signaler` E6.2 · `signale` E6.3 |
+| `/action/:recId` | E7.1, E7.2 · `?vue=garde` E7.3 |
+| `/confirmation/:decisionId` | E8.1, E8.2 (premier gain) |
+| `/foyer`, `/foyer/gestes`, `/foyer/reglages`, `/foyer/autorisations`, `/foyer/sources` | E9.1–E9.5 · `?horsligne=1` E9.6 |
+
+Mes réglages (E9.3) rouvre les écrans d'onboarding en mode édition (`?retour=/foyer/reglages`).
+
+**Scénarios** (`resetDb(...)`, appliqués par `/ecrans`) : `nouveau` (défaut, onboarding à faire),
+`habitue` (7 décisions ce mois-ci, une veste gardée), `premier` (une seule décision → E8.2).
+Le bouton « Parcours complet » de `/ecrans` repart de zéro sur E1.1.
+
 ## Cas de démo dans la base fictive
 
 | Besoin | Résultat | Écran |

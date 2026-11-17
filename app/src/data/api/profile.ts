@@ -40,6 +40,12 @@ export async function setPriorityDomains(domains: DomainId[]): Promise<PriorityD
   return write("priorityDomains", () => ranked);
 }
 
+/** Enseignes proposées en E1.4. */
+export async function listStores(): Promise<string[]> {
+  await delay(100);
+  return [...catalog.stores];
+}
+
 /** Catalogue des gestes proposés au mini-bilan (E2.1). */
 export async function listGestures(): Promise<Gesture[]> {
   await delay(100);

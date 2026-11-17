@@ -17,12 +17,14 @@ type PhoneFrameProps = {
   footer?: ReactNode;
   /** Feuille, toast… positionnés dans le cadre. */
   overlay?: ReactNode;
+  /** Force un thème pour cet écran (le viseur du scan reste sombre, même en Jour). */
+  tone?: "dark";
 };
 
-export function PhoneFrame({ children, header, footer, overlay }: PhoneFrameProps) {
+export function PhoneFrame({ children, header, footer, overlay, tone }: PhoneFrameProps) {
   return (
     <div className={styles.stage}>
-      <div className={styles.phone}>
+      <div className={styles.phone} data-theme={tone}>
         <StatusBar className={styles.deviceChrome} />
         {header && <div className={styles.header}>{header}</div>}
         <main className={styles.content}>{children}</main>

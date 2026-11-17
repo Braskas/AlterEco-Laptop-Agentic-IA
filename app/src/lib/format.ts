@@ -36,3 +36,8 @@ export function daysBetween(fromIso: string, toIso: string): number {
   const ms = Date.parse(toIso) - Date.parse(fromIso);
   return Math.floor(ms / 86_400_000);
 }
+
+/** Compteur du foyer : euros ronds au-delà de 10 € (« 142 € »), centimes en dessous (« 0,44 € »). */
+export function formatEurosTotal(value: number): string {
+  return formatEuros(value >= 10 ? Math.round(value) : value);
+}

@@ -13,6 +13,7 @@ import type {
   Decision,
   Domain,
   Gesture,
+  NextStep,
   Place,
   PriorityDomain,
   Product,
@@ -32,6 +33,9 @@ import productsSeed from "./seed/products.json";
 import recommendationsSeed from "./seed/recommendations.json";
 import sourcesSeed from "./seed/sources.json";
 import userSeed from "./seed/user.json";
+import habitueSeed from "./seed/demo-habitue.json";
+import storesSeed from "./seed/stores.json";
+import nextStepsSeed from "./seed/nextSteps.json";
 
 // ── Catalogue (lecture seule) ───────────────────────────────────────────────
 
@@ -42,6 +46,9 @@ export type Catalog = {
   products: Product[];
   recommendations: Recommendation[];
   sources: Source[];
+  /** Enseignes proposées en E1.4. */
+  stores: string[];
+  nextSteps: NextStep[];
 };
 
 export const catalog: Catalog = {
@@ -51,6 +58,8 @@ export const catalog: Catalog = {
   products: productsSeed as Product[],
   recommendations: recommendationsSeed as Recommendation[],
   sources: sourcesSeed as Source[],
+  stores: storesSeed,
+  nextSteps: nextStepsSeed as NextStep[],
 };
 
 // ── Tables utilisateur (persistées) ─────────────────────────────────────────
@@ -67,10 +76,27 @@ export type UserTables = {
   consents: Consent[];
 };
 
-const STORAGE_KEY = "hooka.db.v1";
+const STORAGE_KEY = "hooka.db.v2";
 
-function freshTables(): UserTables {
-  return structuredClone(userSeed) as UserTables;
+/**
+ * Scénarios de démo :
+ * - "nouveau" (défaut) : onboarding à faire, historique vide → premier gain (E8.2).
+ * - "habitue" : onboarding fait, 7 décisions ce mois-ci, une veste gardée (E8.1, E9.1).
+ * - "premier" : onboarding fait, une seule décision (le yaourt) → premier gain (E8.2).
+ */
+export type Scenario = "nouveau" | "habitue" | "premier";
+
+function freshTables(scenario: Scenario = "nouveau"): UserTables {
+  if (scenario === "nouveau") return structuredClone(userSeed) as UserTables;
+  const habitue = structuredClone(habitueSeed) as UserTables;
+  if (scenario === "habitue") return habitue;
+  return {
+    ...habitue,
+    decisions: [
+      { id: "dec-premier", recommendationId: "r-yaourt-vrac", answer: "validee", createdAt: "2026-11-17T09:40:00Z" },
+    ],
+    setAside: [],
+  };
 }
 
 function load(): UserTables {
@@ -108,9 +134,9 @@ export function write<K extends keyof UserTables>(
   return read(key);
 }
 
-/** Remet la démo à zéro (bouton dans /ecrans, et entre deux tests). */
-export function resetDb(): void {
-  tables = freshTables();
+/** Remet la démo à zéro sur un scénario (boutons de /ecrans, et entre deux tests). */
+export function resetDb(scenario: Scenario = "nouveau"): void {
+  tables = freshTables(scenario);
   save();
 }
 

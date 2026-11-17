@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { catalog } from "../data/db";
 import type { Need, Profile, UserGesture } from "../data/types";
-import { recommend, sourceCertainty } from "./recommend";
+import { nextStep, recommend, sourceCertainty, totals } from "./recommend";
 
 const TODAY = "2026-11-17";
 
@@ -117,5 +117,25 @@ describe("sourceCertainty", () => {
 
   it("source non datée → inutilisable", () => {
     expect(sourceCertainty({ ...base, lastVerifiedAt: null }, TODAY)).toBeNull();
+  });
+});
+
+describe("nextStep", () => {
+  it("propose le pas qui suit un geste déjà fait", () => {
+    const step = nextStep("seconde-main", [{ gestureId: "g-occasion", origin: "app", since: TODAY }], catalog.nextSteps);
+    expect(step?.title).toBe("Fais réparer au lieu de racheter");
+  });
+
+  it("propose le geste de base s'il n'est pas encore fait", () => {
+    expect(nextStep("alimentation", [], catalog.nextSteps)?.gestureId).toBe("g-vrac");
+  });
+});
+
+describe("totals", () => {
+  it("additionne euros et CO₂, convertis en km de voiture", () => {
+    const recs = catalog.recommendations.filter((r) =>
+      ["r-perceuse-reconditionnee", "r-yaourt-vrac"].includes(r.id),
+    );
+    expect(totals(recs)).toEqual({ euros: 54.44, co2Kg: 9, carKm: 45, count: 2 });
   });
 });

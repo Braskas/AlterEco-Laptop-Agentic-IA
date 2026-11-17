@@ -1,0 +1,10 @@
+/* Figma : E4.7 · Chargement — logo et microcopy centrés dans l'écran */
+.loading {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  text-align: center;
+}

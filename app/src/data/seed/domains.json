@@ -1,8 +1,8 @@
 [
-  { "id": "alimentation", "label": "Alimentation", "active": true },
-  { "id": "seconde-main", "label": "Seconde main", "active": true },
-  { "id": "energie", "label": "Énergie", "active": true },
-  { "id": "deplacements", "label": "Déplacements", "active": false },
-  { "id": "numerique", "label": "Numérique", "active": false },
-  { "id": "maison", "label": "Maison", "active": false }
+  { "id": "alimentation", "label": "Alimentation", "description": "Courses et produits du quotidien", "active": true },
+  { "id": "seconde-main", "label": "Seconde main", "description": "Objets, vêtements, outils", "active": true },
+  { "id": "energie", "label": "Énergie", "description": "Chauffage, factures, aides", "active": true },
+  { "id": "deplacements", "label": "Déplacements", "description": "Bientôt", "active": false },
+  { "id": "numerique", "label": "Numérique", "description": "Bientôt", "active": false },
+  { "id": "loisirs", "label": "Loisirs", "description": "Bientôt", "active": false }
 ]

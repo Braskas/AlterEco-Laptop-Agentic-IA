@@ -4,8 +4,10 @@ import { consentsApi, decisionsApi, profileApi, recommendationsApi, resetDb } fr
 beforeEach(() => resetDb());
 
 describe("base fictive", () => {
-  it("part du profil de démo Lyon 7e", async () => {
+  it("scénario habitué : profil Lyon 7e et 7 décisions ce mois-ci", async () => {
+    resetDb("habitue");
     const profile = await profileApi.getProfile();
+    expect((await decisionsApi.getSummary()).countThisMonth).toBe(7);
     expect(profile.postalCode).toBe("69007");
     expect(profile.budget).toBe("equilibre");
   });
@@ -29,8 +31,12 @@ describe("base fictive", () => {
     expect(result.status).toBe("ok");
     if (result.status !== "ok") return;
 
-    await decisionsApi.acceptCard(result.card.recommendation.id);
+    const decision = await decisionsApi.acceptCard(result.card.recommendation.id);
     expect(await decisionsApi.getTotalGain()).toEqual({ euros: 54, count: 1 });
+
+    const confirmation = await decisionsApi.getConfirmation(decision.id);
+    expect(confirmation?.isFirst).toBe(true);
+    expect(confirmation?.summary.carKm).toBe(45); // 9 kg de CO₂ / 0,2
   });
 
   it("ne compte pas une carte passée dans les gains", async () => {

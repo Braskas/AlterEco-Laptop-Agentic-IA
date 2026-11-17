@@ -1,0 +1,94 @@
+/* Styles communs aux écrans (titres, chapeaux, sections). Uniquement des tokens. */
+
+.title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+}
+
+.lead {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--ink-soft);
+}
+
+/* « Dans ton magasin », « Historique »… */
+.context {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.caption {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+
+.centerCaption {
+  composes: caption;
+  text-align: center;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* Carte blanche simple (E7, E8, E2.2) */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--lift);
+}
+
+/* Lien seul en bas d'écran, aligné à gauche comme dans Figma */
+.footerLink {
+  justify-self: start;
+  align-self: flex-start;
+}
+
+/* Écrans sans en-tête (E2.2, E8) : le titre descend comme dans Figma */
+.noHeader {
+  padding-top: var(--space-6);
+}
+
+.grow {
+  flex: 1;
+}

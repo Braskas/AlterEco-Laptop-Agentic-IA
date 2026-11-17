@@ -1,0 +1,38 @@
+{
+  "user": { "id": "demo-habitue", "createdAt": "2026-10-02T08:00:00Z", "onboardingDone": true },
+  "profile": {
+    "budget": "equilibre",
+    "city": "Lyon 7e",
+    "postalCode": "69007",
+    "usualStores": ["Épicerie du Coin", "Marché Gerland"],
+    "timeBudget": "moyen"
+  },
+  "priorityDomains": [
+    { "domain": "alimentation", "rank": 1 },
+    { "domain": "seconde-main", "rank": 2 },
+    { "domain": "energie", "rank": 3 }
+  ],
+  "gestures": [
+    { "gestureId": "g-vrac", "origin": "mini-bilan", "since": "2026-10-02" },
+    { "gestureId": "g-occasion", "origin": "mini-bilan", "since": "2026-10-02" },
+    { "gestureId": "g-chauffage-19", "origin": "mini-bilan", "since": "2026-10-02" }
+  ],
+  "decisions": [
+    { "id": "dec-jean", "recommendationId": "r-jean-occasion", "answer": "validee", "createdAt": "2026-11-02T17:20:00Z" },
+    { "id": "dec-lessive", "recommendationId": "r-lessive-froid", "answer": "validee", "createdAt": "2026-11-04T09:00:00Z" },
+    { "id": "dec-fromage", "recommendationId": "r-fromage-coupe", "answer": "validee", "createdAt": "2026-11-05T18:10:00Z" },
+    { "id": "dec-atelier", "recommendationId": "r-atelier-cordon", "answer": "validee", "createdAt": "2026-11-06T12:30:00Z" },
+    { "id": "dec-yaourt", "recommendationId": "r-yaourt-vrac", "answer": "validee", "createdAt": "2026-11-08T18:42:00Z" },
+    { "id": "dec-chauffage", "recommendationId": "r-chauffage-17-nuit", "answer": "validee", "createdAt": "2026-11-10T21:05:00Z" },
+    { "id": "dec-perceuse", "recommendationId": "r-perceuse-reconditionnee", "answer": "validee", "createdAt": "2026-11-14T10:15:00Z" }
+  ],
+  "setAside": [{ "recommendationId": "r-veste-occasion", "createdAt": "2026-11-15T16:00:00Z" }],
+  "reports": [],
+  "requests": [],
+  "consents": [
+    { "purpose": "camera", "granted": true, "updatedAt": "2026-10-02T08:05:00Z" },
+    { "purpose": "micro", "granted": true, "updatedAt": "2026-10-03T12:00:00Z" },
+    { "purpose": "localisation", "granted": false, "updatedAt": "2026-10-02T08:06:00Z" },
+    { "purpose": "notifications", "granted": false, "updatedAt": "2026-10-02T08:06:00Z" }
+  ]
+}

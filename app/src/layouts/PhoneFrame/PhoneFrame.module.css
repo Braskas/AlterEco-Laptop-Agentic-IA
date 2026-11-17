@@ -33,6 +33,11 @@
   overflow-y: auto;
 }
 
+/* La zone défile : ses enfants gardent leur hauteur au lieu de se compresser */
+.content > * {
+  flex-shrink: 0;
+}
+
 .footer {
   display: grid;
   gap: var(--space-3);

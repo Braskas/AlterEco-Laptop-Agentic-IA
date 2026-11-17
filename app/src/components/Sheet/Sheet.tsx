@@ -15,9 +15,13 @@ type SheetProps = {
   inline?: boolean;
   /** Nom accessible de la feuille (id du titre). */
   labelledBy?: string;
+  /** Élément posé juste au-dessus de la feuille (un Toast, par exemple). */
+  above?: ReactNode;
+  /** false : pas de voile derrière (E4.2, la feuille se pose sur le viseur). */
+  scrim?: boolean;
 };
 
-export function Sheet({ children, onClose, inline = false, labelledBy }: SheetProps) {
+export function Sheet({ children, onClose, inline = false, labelledBy, above, scrim = true }: SheetProps) {
   useEffect(() => {
     if (inline || !onClose) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
@@ -41,7 +45,10 @@ export function Sheet({ children, onClose, inline = false, labelledBy }: SheetPr
 
   return (
     <div className={styles.overlay}>
-      <button type="button" className={styles.scrim} aria-label="Fermer" onClick={onClose} tabIndex={-1} />
+      {scrim && (
+        <button type="button" className={styles.scrim} aria-label="Fermer" onClick={onClose} tabIndex={-1} />
+      )}
+      {above && <div className={styles.above}>{above}</div>}
       {sheet}
     </div>
   );

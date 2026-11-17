@@ -8,4 +8,4 @@ export * as recommendationsApi from "./recommendations";
 export * as decisionsApi from "./decisions";
 export * as reportsApi from "./reports";
 export * as consentsApi from "./consents";
-export { resetDb } from "../db";
+export { resetDb, type Scenario } from "../db";

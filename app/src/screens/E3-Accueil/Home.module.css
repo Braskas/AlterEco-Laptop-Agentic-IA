@@ -1,0 +1,63 @@
+/* Figma : E3.1 · Accueil et ses états */
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-2);
+}
+
+.home {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-right: calc(-1 * var(--space-3));
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.home:focus-visible {
+  outline: var(--stroke-2) solid var(--focus);
+  outline-offset: 0;
+}
+
+.scan {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* « Tu es où ? », « Domaine du moment » : label ink */
+.label {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+}
+
+/* E3.3 · Hors domaines */
+.locked {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding-top: var(--space-2);
+}
+
+.locked > svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.lockedActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+}

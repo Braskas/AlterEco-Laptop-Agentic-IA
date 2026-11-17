@@ -1,5 +1,35 @@
+import { useLayoutEffect, useRef } from "react";
 import { Chip } from "../Chip";
+import { cx } from "../../lib/cx";
 import styles from "./DoubleBonus.module.css";
+
+/**
+ * Chiffre en 44 px (DS `figure`) qui rétrécit seulement s'il ne tient pas dans sa tuile
+ * (« 129 km », « 1 240 € »…), au lieu de déborder.
+ */
+function Figure({ children, className }: { children: string; className?: string }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  useLayoutEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const fit = () => {
+      el.style.fontSize = "";
+      if (el.scrollWidth > el.clientWidth) {
+        const size = parseFloat(getComputedStyle(el).fontSize);
+        el.style.fontSize = `${Math.floor((size * el.clientWidth) / el.scrollWidth)}px`;
+      }
+    };
+    fit();
+    const observer = new ResizeObserver(fit);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [children]);
+  return (
+    <span ref={ref} className={cx(styles.figure, className)}>
+      {children}
+    </span>
+  );
+}
 
 /**
  * Figma : Hooka/DoubleBonus (8:162) — État = Valeurs | Planète à zéro.
@@ -20,14 +50,14 @@ export function DoubleBonus({ money, planet, nextStep }: DoubleBonusProps) {
       <div className={styles.tiles}>
         <div className={`${styles.tile} ${styles.money}`}>
           <span className={styles.label}>Dans ma poche</span>
-          <span className={styles.figure}>{money.value}</span>
+          <Figure>{money.value}</Figure>
           <span className={styles.detail}>{money.detail}</span>
         </div>
         <div className={`${styles.tile} ${styles.planet}`}>
           <span className={styles.label}>Pour la planète</span>
           {planet ? (
             <>
-              <span className={`${styles.figure} ${styles.violet}`}>{planet.value}</span>
+              <Figure className={styles.violet}>{planet.value}</Figure>
               <span className={styles.detail}>{planet.detail}</span>
             </>
           ) : (

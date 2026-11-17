@@ -4,7 +4,7 @@ import type { Report } from "../types";
 
 /** E6.2 → E6.3 : signaler une adresse, un prix ou une donnée. */
 export async function sendReport(
-  recommendationId: string,
+  recommendationId: string | undefined,
   subject: Report["subject"],
   message?: string,
 ): Promise<Report> {

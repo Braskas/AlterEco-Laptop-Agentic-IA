@@ -8,18 +8,25 @@ import styles from "./ListRow.module.css";
  * Ligne de réglage de 56 px : icône, libellé, valeur actuelle, chevron ou interrupteur.
  *   <ListRow icon={MapPin} label="Lieu" value="Lyon 7e" onClick={…} />
  *   <ListRow icon={Camera} label="Caméra" toggle={{ checked, onChange }} />
- * Avec un interrupteur, la valeur affiche « Activé » / « Coupé » (un mot en plus de la couleur).
+ * Avec un interrupteur, la valeur commence par « Activé » / « Coupé » (un mot en plus de la couleur),
+ * suivi de `value` : « Activée · pour scanner ».
  */
 type ListRowProps = {
   icon: LucideIcon;
   label: string;
   value?: string;
   onClick?: () => void;
-  toggle?: { checked: boolean; onChange: (checked: boolean) => void };
+  toggle?: {
+    checked: boolean;
+    onChange: (checked: boolean) => void;
+    /** Mot d'état accordé, par défaut « Activé » / « Coupé » (« Activée », « Coupées »…). */
+    labels?: { on: string; off: string };
+  };
 };
 
 export function ListRow({ icon, label, value, onClick, toggle }: ListRowProps) {
-  const shownValue = toggle ? (toggle.checked ? "Activé" : "Coupé") : value;
+  const stateWord = toggle && (toggle.checked ? (toggle.labels?.on ?? "Activé") : (toggle.labels?.off ?? "Coupé"));
+  const shownValue = stateWord ? [stateWord, value].filter(Boolean).join(" · ") : value;
   const texts = (
     <span className={styles.texts}>
       <span className={styles.label}>{label}</span>

@@ -16,11 +16,14 @@ export type DomainId =
   | "energie"
   | "deplacements"
   | "numerique"
-  | "maison";
+  | "maison"
+  | "loisirs";
 
 export type Domain = {
   id: DomainId;
   label: string;
+  /** « Courses et produits du quotidien » (E1.2). */
+  description?: string;
   /** false = verrouillé dans le prototype (bouton « Me prévenir », E1.2b). */
   active: boolean;
 };
@@ -65,6 +68,8 @@ export type Gesture = {
   label: string; // « J'achète en vrac »
   /** Phrase de valorisation affichée sur la carte E5 : « Tu prends déjà le vrac. » */
   praise: string;
+  /** Ligne « Déjà fait » du retour positif (E2.2) : « Tu achètes en vrac ». */
+  doneLabel: string;
 };
 
 export type UserGesture = {
@@ -111,7 +116,8 @@ export type SetAside = {
 /** Signalement — erreur d'adresse, de prix ou de donnée (E6.2). */
 export type Report = {
   id: string;
-  recommendationId: string;
+  /** Absent quand le signalement part de « Sources et méthode » (E9.5). */
+  recommendationId?: string;
   subject: "adresse" | "prix" | "horaires" | "donnee";
   message?: string;
   status: "recu" | "en-cours" | "corrige";
@@ -170,6 +176,8 @@ export type Recommendation = {
   /** Produits ou mots-clés qui déclenchent cette recommandation. */
   matches: { productIds?: string[]; keywords?: string[] };
   title: string; // « Yaourt nature vrac 500 g »
+  /** Avec article, pour « dont 54 € sur ta perceuse » (E8, E9.1). */
+  shortName: string;
   context: string; // « Dans ton magasin », « Près de chez toi », « Pour ton logement »
   placeId?: string;
   /** Ligne de méta sous le titre quand il n'y a pas de lieu : « Chez toi · 2 min de réglage ». */
@@ -180,10 +188,17 @@ export type Recommendation = {
   referenceLabel?: string; // « neuve »
   gain: { euros: number; period?: "mois" | "an"; label: string }; // « 0,44 € dans ma poche »
   time: { minutes: number; label: string }; // « Sans détour », « 11 min »
-  impact: { label: string }; // « ≈ 120 g de plastique évités » — une seule équivalence
+  /** Une seule équivalence affichée ; co2Kg sert au compteur « Pour la planète ». */
+  impact: { label: string; co2Kg: number }; // « ≈ 120 g de plastique évités »
   /** Geste déjà en place qui va dans le même sens (phrase de valorisation). */
   relatedGestureId?: string;
   hypotheses: string[];
+  /** Fiche « Pourquoi ce choix ? » (E6.1) */
+  method: string;
+  uncertainty: string;
+  /** Action guidée sans lieu (E7.2) : « Trois gestes, deux minutes. » + étapes. */
+  actionIntro?: string;
+  steps?: string[];
   sourceIds: string[];
   /** Budgets pour lesquels l'alternative reste accessible. */
   budgets: BudgetLevel[];
@@ -209,3 +224,16 @@ export type CardResult =
   | { status: "aucune-alternative" } // E5.5
   | { status: "source-indisponible" } // E5.7
   | { status: "non-reconnu" }; // E4.3
+
+/** « Petit pas suivant » proposé après une décision (E8). */
+export type NextStep = {
+  domain: DomainId;
+  /** Geste qui doit déjà être en place pour proposer ce pas (sinon on propose le geste lui-même). */
+  afterGestureId?: string;
+  gestureId: string;
+  title: string; // « Fais réparer au lieu de racheter »
+  meta: string; // « Seconde main · Atelier Cordon à 600 m »
+  chip: string; // « Occasion faite. Prochain : réparer. »
+  /** Requête lancée par « J'essaie ». */
+  query: string;
+};

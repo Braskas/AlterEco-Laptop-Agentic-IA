@@ -1,4 +1,4 @@
-import { useId } from "react";
+import { useId, type ReactNode } from "react";
 import { Camera, MapPin, Mic, type LucideIcon } from "lucide-react";
 import { Button } from "../Button";
 import { Icon } from "../Icon";
@@ -27,14 +27,16 @@ type PermissionSheetProps = {
   onAllow: () => void;
   onDecline: () => void;
   inline?: boolean;
+  /** Toast affiché au-dessus de la feuille. */
+  above?: ReactNode;
 };
 
-export function PermissionSheet({ type, onAllow, onDecline, inline }: PermissionSheetProps) {
+export function PermissionSheet({ type, onAllow, onDecline, inline, above }: PermissionSheetProps) {
   const titleId = useId();
   const { icon, title, text } = CONTENT[type];
 
   return (
-    <Sheet onClose={onDecline} inline={inline} labelledBy={titleId}>
+    <Sheet onClose={onDecline} inline={inline} labelledBy={titleId} above={above}>
       <span className={styles.picto}>
         <Icon as={icon} />
       </span>

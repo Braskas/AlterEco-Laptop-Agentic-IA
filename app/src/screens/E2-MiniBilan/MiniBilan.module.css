@@ -1,0 +1,25 @@
+/* Figma : E2.1 · Gestes, E2.2 · Retour positif */
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.intro + .card {
+  margin-top: var(--space-2);
+}
+
+.done {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 24px;
+}

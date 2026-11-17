@@ -1,0 +1,50 @@
+/* Figma : E1.1 · Bienvenue — composition de disques et de pilules aux couleurs de la marque */
+.shapes {
+  position: relative;
+  height: 240px;
+  margin-top: var(--space-4);
+}
+
+.shapes > span {
+  position: absolute;
+  border-radius: var(--radius-pill);
+}
+
+.disc {
+  left: 0;
+  top: 40px;
+  width: 170px;
+  height: 170px;
+  background: var(--lilac);
+}
+
+.pill {
+  left: 120px;
+  top: 0;
+  width: 220px;
+  height: 96px;
+  background: var(--brume);
+}
+
+.blush {
+  left: 190px;
+  top: 110px;
+  width: 130px;
+  height: 130px;
+  background: var(--blush);
+}
+
+.violet {
+  left: 60px;
+  top: 170px;
+  width: 150px;
+  height: 56px;
+  background: var(--violet);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  margin-top: auto;
+}

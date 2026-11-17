@@ -2,134 +2,465 @@
   {
     "id": "r-yaourt-vrac",
     "domain": "alimentation",
-    "matches": { "productIds": ["prod-yaourt-marque"], "keywords": ["yaourt"] },
+    "matches": {
+      "productIds": [
+        "prod-yaourt-marque"
+      ],
+      "keywords": [
+        "yaourt"
+      ]
+    },
     "title": "Yaourt nature vrac 500 g",
+    "shortName": "ton yaourt",
     "context": "Dans ton magasin",
     "placeId": "p-epicerie-coin",
     "detail": "Même rayon, deux étagères plus bas",
     "price": 1.45,
     "referencePrice": 1.89,
-    "gain": { "euros": 0.44, "label": "0,44 € dans ma poche" },
-    "time": { "minutes": 0, "label": "Sans détour" },
-    "impact": { "label": "≈ 120 g de plastique évités" },
+    "gain": {
+      "euros": 0.44,
+      "label": "0,44 € dans ma poche"
+    },
+    "time": {
+      "minutes": 0,
+      "label": "Sans détour"
+    },
+    "impact": {
+      "label": "≈ 120 g de plastique évités",
+      "co2Kg": 0
+    },
     "relatedGestureId": "g-vrac",
     "hypotheses": [
       "Comparaison à quantité égale (500 g).",
       "Pot consigné rapporté au magasin."
     ],
-    "sourceIds": ["s-prix-epicerie"],
-    "budgets": ["serre", "equilibre", "confortable"]
+    "method": "Gain = prix au kilo du pot de marque moins prix au kilo du vrac. Impact = emballages évités.",
+    "uncertainty": "Le prix du vrac peut varier d’une semaine à l’autre.",
+    "sourceIds": [
+      "s-prix-epicerie"
+    ],
+    "budgets": [
+      "serre",
+      "equilibre",
+      "confortable"
+    ]
   },
   {
     "id": "r-perceuse-reconditionnee",
     "domain": "seconde-main",
-    "matches": { "productIds": ["prod-perceuse-neuve"], "keywords": ["perceuse", "visseuse"] },
+    "matches": {
+      "productIds": [
+        "prod-perceuse-neuve"
+      ],
+      "keywords": [
+        "perceuse",
+        "visseuse"
+      ]
+    },
     "title": "Perceuse reconditionnée",
+    "shortName": "ta perceuse",
     "context": "Près de chez toi",
     "placeId": "p-ressourcerie-pentes",
     "detail": "Bon état · ouvert jusqu’à 19 h, vérifié le 4 nov.",
     "price": 35,
     "referencePrice": 89,
     "referenceLabel": "neuve",
-    "gain": { "euros": 54, "label": "54 € dans ma poche" },
-    "time": { "minutes": 11, "label": "11 min" },
-    "impact": { "label": "≈ 9 kg de CO₂ évités" },
+    "gain": {
+      "euros": 54,
+      "label": "54 € dans ma poche"
+    },
+    "time": {
+      "minutes": 11,
+      "label": "11 min"
+    },
+    "impact": {
+      "label": "≈ 9 kg de CO₂ évités",
+      "co2Kg": 9
+    },
     "relatedGestureId": "g-occasion",
     "hypotheses": [
       "Comparaison avec le prix moyen d’un modèle neuf équivalent.",
       "Fabrication d’un appareil neuf évitée."
     ],
-    "sourceIds": ["s-annonce-perceuse"],
-    "budgets": ["serre", "equilibre", "confortable"]
+    "method": "Gain = prix neuf moyen moins prix affiché. Impact = fabrication évitée, base ADEME.",
+    "uncertainty": "Estimation prudente, à plus ou moins 15 %. L’état réel se vérifie sur place.",
+    "sourceIds": [
+      "s-annonce-perceuse",
+      "s-prix-neuf-perceuse"
+    ],
+    "budgets": [
+      "serre",
+      "equilibre",
+      "confortable"
+    ]
   },
   {
     "id": "r-veste-occasion",
     "domain": "seconde-main",
-    "matches": { "productIds": ["prod-veste-neuve"], "keywords": ["veste", "manteau"] },
+    "matches": {
+      "productIds": [
+        "prod-veste-neuve"
+      ],
+      "keywords": [
+        "veste",
+        "manteau"
+      ]
+    },
     "title": "Veste en laine d’occasion",
+    "shortName": "ta veste",
     "context": "Près de chez toi",
-    "placeId": "p-friperie-guillotiere",
+    "placeId": "p-friperie-marche",
     "detail": "Très bon état · taille M",
     "price": 38,
     "referencePrice": 129,
     "referenceLabel": "neuve",
-    "gain": { "euros": 91, "label": "91 € dans ma poche" },
-    "time": { "minutes": 17, "label": "17 min" },
-    "impact": { "label": "≈ 25 kg de CO₂ évités" },
+    "gain": {
+      "euros": 91,
+      "label": "91 € dans ma poche"
+    },
+    "time": {
+      "minutes": 15,
+      "label": "15 min"
+    },
+    "impact": {
+      "label": "≈ 25 kg de CO₂ évités",
+      "co2Kg": 25
+    },
     "relatedGestureId": "g-occasion",
-    "hypotheses": ["Comparaison avec le prix public de la veste neuve scannée."],
-    "sourceIds": ["s-horaires-friperie"],
-    "budgets": ["serre", "equilibre", "confortable"]
+    "hypotheses": [
+      "Comparaison avec le prix public de la veste neuve scannée."
+    ],
+    "method": "Gain = prix public de la veste neuve moins prix affiché. Impact = fabrication textile évitée, base ADEME.",
+    "uncertainty": "Les horaires datent d’avril : passe un coup de fil avant d’y aller.",
+    "sourceIds": [
+      "s-horaires-friperie"
+    ],
+    "budgets": [
+      "serre",
+      "equilibre",
+      "confortable"
+    ]
   },
   {
     "id": "r-chauffage-17-nuit",
     "domain": "energie",
-    "matches": { "productIds": ["prod-facture-energie"], "keywords": ["chauffage", "facture", "radiateur"] },
+    "matches": {
+      "productIds": [
+        "prod-facture-energie"
+      ],
+      "keywords": [
+        "chauffage",
+        "facture",
+        "radiateur",
+        "chauffe"
+      ]
+    },
     "title": "Baisser à 17 °C la nuit",
+    "shortName": "ton chauffage",
     "context": "Pour ton logement",
     "meta": "Chez toi · 2 min de réglage",
     "detail": "Thermostat ou radiateurs, pièce par pièce",
-    "gain": { "euros": 12, "period": "mois", "label": "≈ 12 € par mois" },
-    "time": { "minutes": 2, "label": "2 min" },
-    "impact": { "label": "≈ 25 kg de CO₂ par an" },
+    "gain": {
+      "euros": 12,
+      "period": "mois",
+      "label": "≈ 12 € par mois"
+    },
+    "time": {
+      "minutes": 2,
+      "label": "2 min"
+    },
+    "impact": {
+      "label": "≈ 25 kg de CO₂ par an",
+      "co2Kg": 2
+    },
     "relatedGestureId": "g-chauffage-19",
     "hypotheses": [
       "Logement de 45 m² chauffé à l’électricité.",
       "Baisse de 2 °C pendant 8 h par nuit, d’octobre à avril."
     ],
-    "sourceIds": ["s-chauffage"],
-    "budgets": ["serre", "equilibre", "confortable"]
+    "method": "Gain = 7 % de chauffage en moins par degré, sur ton tarif. Impact = facteur électricité ADEME.",
+    "uncertainty": "Dépend de l’isolation et du type de chauffage : à plus ou moins 30 %.",
+    "actionIntro": "Trois gestes, deux minutes.",
+    "steps": [
+      "Ouvre ton thermostat ou tes radiateurs.",
+      "Règle la nuit sur 17 °C.",
+      "Garde 19 °C le jour."
+    ],
+    "sourceIds": [
+      "s-chauffage"
+    ],
+    "budgets": [
+      "serre",
+      "equilibre",
+      "confortable"
+    ]
   },
   {
     "id": "r-lessive-froid",
     "domain": "energie",
-    "matches": { "productIds": ["prod-lessive"], "keywords": ["lessive", "machine"] },
+    "matches": {
+      "productIds": [
+        "prod-lessive"
+      ],
+      "keywords": [
+        "lessive",
+        "machine"
+      ]
+    },
     "title": "Lancer la machine à froid",
+    "shortName": "ta lessive",
     "context": "Pour ton logement",
     "meta": "Chez toi · aucun réglage",
     "detail": "Programme 20 °C pour le linge peu sale",
-    "gain": { "euros": 3, "period": "mois", "label": "≈ 3 € par mois" },
-    "time": { "minutes": 0, "label": "Sans détour" },
-    "impact": { "label": "≈ 8 kg de CO₂ par an" },
+    "gain": {
+      "euros": 3,
+      "period": "mois",
+      "label": "≈ 3 € par mois"
+    },
+    "time": {
+      "minutes": 0,
+      "label": "Sans détour"
+    },
+    "impact": {
+      "label": "≈ 8 kg de CO₂ par an",
+      "co2Kg": 0.7
+    },
     "relatedGestureId": "g-lessive-30",
-    "hypotheses": ["4 machines par semaine."],
-    "sourceIds": ["s-lessive-conteste"],
-    "budgets": ["serre", "equilibre", "confortable"]
+    "hypotheses": [
+      "4 machines par semaine."
+    ],
+    "method": "Gain = énergie de chauffe de l’eau évitée, sur ton tarif.",
+    "uncertainty": "Les études ne sont pas d’accord sur l’efficacité du lavage à froid.",
+    "actionIntro": "Deux gestes, trente secondes.",
+    "steps": [
+      "Choisis le programme 20 °C ou « froid ».",
+      "Garde 40 °C pour le linge très sale."
+    ],
+    "sourceIds": [
+      "s-lessive-conteste"
+    ],
+    "budgets": [
+      "serre",
+      "equilibre",
+      "confortable"
+    ]
+  },
+  {
+    "id": "r-atelier-cordon",
+    "domain": "seconde-main",
+    "matches": {
+      "keywords": [
+        "réparer",
+        "reparer",
+        "retouche",
+        "couture"
+      ]
+    },
+    "title": "Faire réparer chez Atelier Cordon",
+    "shortName": "ta réparation",
+    "context": "Près de chez toi",
+    "placeId": "p-atelier-cordon",
+    "detail": "Retouches et petites réparations en 48 h",
+    "price": 15,
+    "referencePrice": 60,
+    "referenceLabel": "neuf",
+    "gain": {
+      "euros": 45,
+      "label": "45 € dans ma poche"
+    },
+    "time": {
+      "minutes": 8,
+      "label": "8 min"
+    },
+    "impact": {
+      "label": "≈ 6 kg de CO₂ évités",
+      "co2Kg": 6
+    },
+    "relatedGestureId": "g-occasion",
+    "hypotheses": [
+      "Comparaison avec un article neuf équivalent."
+    ],
+    "method": "Gain = prix moyen d’un article neuf moins prix de la réparation.",
+    "uncertainty": "Le devis final se fait sur place.",
+    "sourceIds": [
+      "s-annonce-perceuse"
+    ],
+    "budgets": [
+      "serre",
+      "equilibre",
+      "confortable"
+    ]
+  },
+  {
+    "id": "r-fromage-coupe",
+    "domain": "alimentation",
+    "matches": {
+      "keywords": [
+        "fromage",
+        "coupe"
+      ]
+    },
+    "title": "Comté à la coupe, 200 g",
+    "shortName": "ton fromage",
+    "context": "Dans ton magasin",
+    "placeId": "p-epicerie-coin",
+    "detail": "Rayon fromage, apporte ta boîte",
+    "price": 4.2,
+    "referencePrice": 4.9,
+    "gain": {
+      "euros": 0.7,
+      "label": "0,70 € dans ma poche"
+    },
+    "time": {
+      "minutes": 0,
+      "label": "Sans détour"
+    },
+    "impact": {
+      "label": "≈ 30 g de plastique évités",
+      "co2Kg": 0
+    },
+    "relatedGestureId": "g-vrac",
+    "hypotheses": [
+      "Comparaison avec le comté préemballé de même affinage."
+    ],
+    "method": "Gain = prix au kilo préemballé moins prix au kilo à la coupe.",
+    "uncertainty": "Le poids coupé peut dépasser un peu les 200 g.",
+    "sourceIds": [
+      "s-prix-epicerie"
+    ],
+    "budgets": [
+      "serre",
+      "equilibre",
+      "confortable"
+    ]
+  },
+  {
+    "id": "r-jean-occasion",
+    "domain": "seconde-main",
+    "matches": {
+      "keywords": [
+        "jean",
+        "pantalon"
+      ]
+    },
+    "title": "Jean d’occasion",
+    "shortName": "ton jean",
+    "context": "Près de chez toi",
+    "placeId": "p-friperie-marche",
+    "detail": "Comme neuf · taille 40",
+    "price": 18,
+    "referencePrice": 50,
+    "referenceLabel": "neuf",
+    "gain": {
+      "euros": 32,
+      "label": "32 € dans ma poche"
+    },
+    "time": {
+      "minutes": 15,
+      "label": "15 min"
+    },
+    "impact": {
+      "label": "≈ 8 kg de CO₂ évités",
+      "co2Kg": 8
+    },
+    "relatedGestureId": "g-occasion",
+    "hypotheses": [
+      "Comparaison avec un jean neuf équivalent."
+    ],
+    "method": "Gain = prix neuf moyen moins prix affiché.",
+    "uncertainty": "Stock unique, à vérifier sur place.",
+    "sourceIds": [
+      "s-annonce-perceuse"
+    ],
+    "budgets": [
+      "serre",
+      "equilibre",
+      "confortable"
+    ]
   },
   {
     "id": "r-reparation-lointaine",
     "domain": "seconde-main",
-    "matches": { "keywords": ["chaussures", "semelle"] },
+    "matches": {
+      "keywords": [
+        "chaussures",
+        "semelle"
+      ]
+    },
     "title": "Ressemeler tes chaussures",
+    "shortName": "tes chaussures",
     "context": "Près de chez toi",
     "placeId": "p-cordonnerie-jean-mace",
     "detail": "Ressemelage complet en 48 h",
     "price": 45,
     "referencePrice": 110,
     "referenceLabel": "neuves",
-    "gain": { "euros": 65, "label": "65 € dans ma poche" },
-    "time": { "minutes": 38, "label": "38 min" },
-    "impact": { "label": "≈ 14 kg de CO₂ évités" },
+    "gain": {
+      "euros": 65,
+      "label": "65 € dans ma poche"
+    },
+    "time": {
+      "minutes": 38,
+      "label": "38 min"
+    },
+    "impact": {
+      "label": "≈ 14 kg de CO₂ évités",
+      "co2Kg": 14
+    },
     "relatedGestureId": "g-reparer",
-    "hypotheses": ["Comparaison avec une paire neuve équivalente."],
-    "sourceIds": ["s-annonce-perceuse"],
-    "budgets": ["equilibre", "confortable"]
+    "hypotheses": [
+      "Comparaison avec une paire neuve équivalente."
+    ],
+    "method": "Gain = prix d’une paire neuve moins prix du ressemelage.",
+    "uncertainty": "Le devis final se fait sur place.",
+    "sourceIds": [
+      "s-annonce-perceuse"
+    ],
+    "budgets": [
+      "equilibre",
+      "confortable"
+    ]
   },
   {
     "id": "r-sans-source",
     "domain": "alimentation",
-    "matches": { "productIds": ["prod-chips"], "keywords": ["chips"] },
+    "matches": {
+      "productIds": [
+        "prod-chips"
+      ],
+      "keywords": [
+        "chips"
+      ]
+    },
     "title": "Chips en vrac",
+    "shortName": "tes chips",
     "context": "Dans ton magasin",
     "placeId": "p-epicerie-coin",
     "detail": "Rayon vrac",
     "price": 1.8,
     "referencePrice": 2.1,
-    "gain": { "euros": 0.3, "label": "0,30 € dans ma poche" },
-    "time": { "minutes": 0, "label": "Sans détour" },
-    "impact": { "label": "≈ 20 g de plastique évités" },
+    "gain": {
+      "euros": 0.3,
+      "label": "0,30 € dans ma poche"
+    },
+    "time": {
+      "minutes": 0,
+      "label": "Sans détour"
+    },
+    "impact": {
+      "label": "≈ 20 g de plastique évités",
+      "co2Kg": 0
+    },
     "hypotheses": [],
-    "sourceIds": ["s-non-datee"],
-    "budgets": ["serre", "equilibre", "confortable"]
+    "method": "",
+    "uncertainty": "",
+    "sourceIds": [
+      "s-non-datee"
+    ],
+    "budgets": [
+      "serre",
+      "equilibre",
+      "confortable"
+    ]
   }
 ]

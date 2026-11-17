@@ -1,7 +1,7 @@
 import { catalog, newId, read, write } from "../db";
-import { recommend } from "../../engine/recommend";
+import { buildCard, recommend } from "../../engine/recommend";
 import { DEMO_TODAY, delay, nowIso } from "../../lib/delay";
-import type { CardResult, Need, Product, Recommendation, UnmetRequest } from "../types";
+import type { Card, CardResult, Need, Product, Recommendation, UnmetRequest } from "../types";
 
 /**
  * E4 → E5 : transforme un besoin (scan, voix, texte, lieu) en une seule carte.
@@ -39,6 +39,18 @@ export async function listDemoProducts(): Promise<Product[]> {
 export async function getRecommendation(id: string): Promise<Recommendation | null> {
   await delay(100);
   return structuredClone(catalog.recommendations.find((r) => r.id === id) ?? null);
+}
+
+/** E7 : la carte d'une recommandation déjà choisie (lieu, distance, gain). */
+export async function getCardById(id: string): Promise<Card | null> {
+  await delay(150);
+  const rec = catalog.recommendations.find((r) => r.id === id);
+  return rec ? buildCard(rec, { userGestures: read("gestures"), catalog, today: DEMO_TODAY }) : null;
+}
+
+export async function getProduct(id: string): Promise<Product | null> {
+  await delay(150);
+  return structuredClone(catalog.products.find((p) => p.id === id) ?? null);
 }
 
 /** E1.2b « Me prévenir », E3.3 hors domaines, E4.3 non reconnu. */
