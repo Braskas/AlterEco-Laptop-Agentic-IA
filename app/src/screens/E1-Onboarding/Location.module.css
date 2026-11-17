@@ -1,0 +1,8 @@
+/* E1.4 · ligne d'état sous les enseignes (chargement, source OpenStreetMap, repli) */
+.caption {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 500;
+  color: var(--ink-soft);
+}

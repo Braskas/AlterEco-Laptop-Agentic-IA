@@ -1,0 +1,71 @@
+/* Liste de suggestions sous Hooka/Champ : surface, filet, rayon md, ombre lift-sm */
+.wrapper {
+  position: relative;
+}
+
+.list {
+  position: absolute;
+  z-index: 5;
+  left: 0;
+  right: 0;
+  margin: var(--space-1) 0 0;
+  padding: var(--space-1);
+  list-style: none;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  box-shadow: var(--lift-sm);
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 48px;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.option > svg {
+  flex-shrink: 0;
+  color: var(--ink-soft);
+}
+
+.active {
+  background: var(--brume);
+}
+
+.texts {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.label {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+}
+
+.meta {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+
+.hint {
+  min-height: 18px;
+  margin-top: var(--space-1);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 500;
+  color: var(--ink-soft);
+}

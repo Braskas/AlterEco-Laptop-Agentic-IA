@@ -51,6 +51,9 @@ export type Profile = {
   budget: BudgetLevel;
   city: string;
   postalCode: string;
+  /** Code INSEE et centre de la commune choisie dans la liste (E1.4), absents en saisie libre. */
+  cityCode?: string;
+  cityCenter?: { lat: number; lon: number };
   usualStores: string[];
   timeBudget: TimeBudget;
 };
