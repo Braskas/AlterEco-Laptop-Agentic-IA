@@ -1,4 +1,4 @@
-# Spécifications techniques – Hooka (concept A)
+# Spécifications techniques – Hooka
 
 17 novembre 2026
 
