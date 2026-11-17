@@ -1,0 +1,76 @@
+/* Figma : Hooka/Champ (7:20) */
+.wrapper {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.label {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  height: 56px;
+  padding: 0 var(--space-4);
+  background: var(--surface);
+  color: var(--ink);
+  border: var(--stroke-1) solid var(--line);
+  border-radius: var(--radius-sm);
+}
+
+/* État Focus : contour remplacé par l'anneau focus de 3 px (la hauteur reste 56 px) */
+.field:focus-within {
+  border: var(--stroke-2) solid var(--focus);
+  padding: 0 calc(var(--space-4) - (var(--stroke-2) - var(--stroke-1)));
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.input::placeholder {
+  color: var(--ink-soft);
+  opacity: 1;
+}
+
+.endButton {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-right: calc(-1 * var(--space-3));
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.endButton:focus-visible {
+  outline: var(--stroke-2) solid var(--focus);
+  outline-offset: -3px;
+}

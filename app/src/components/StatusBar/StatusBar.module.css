@@ -1,0 +1,45 @@
+/* Figma : Hooka/StatusBar (7:105) */
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 54px;
+  padding: 0 28px 0 32px;
+  flex-shrink: 0;
+}
+
+.time {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.indicators {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.signal,
+.wifi {
+  height: 11px;
+  border-radius: 2px;
+  background: var(--ink);
+}
+
+.signal {
+  width: 17px;
+}
+
+.wifi {
+  width: 15px;
+}
+
+.battery {
+  width: 25px;
+  height: 12px;
+  border: 1px solid var(--ink);
+  border-radius: 3px;
+}

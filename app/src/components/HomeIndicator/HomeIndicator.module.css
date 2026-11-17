@@ -1,0 +1,17 @@
+/* Figma : Hooka/HomeIndicator (7:111) */
+.zone {
+  position: relative;
+  height: 34px;
+  flex-shrink: 0;
+}
+
+.bar {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  width: 134px;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--ink);
+  transform: translateX(-50%);
+}

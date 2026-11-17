@@ -1,0 +1,13 @@
+/* Figma : Hooka/Poignée (9:60) */
+.zone {
+  display: grid;
+  place-items: center;
+  height: 20px;
+}
+
+.bar {
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--hairline);
+}

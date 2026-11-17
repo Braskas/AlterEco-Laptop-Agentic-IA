@@ -1,0 +1,31 @@
+/* Figma : Hooka/Toast (9:131) */
+.toast {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  box-shadow: var(--lift-sm);
+  animation: enter 0.2s ease-out;
+}
+
+.toast > svg {
+  flex-shrink: 0;
+}
+
+.message {
+  flex: 1;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+}

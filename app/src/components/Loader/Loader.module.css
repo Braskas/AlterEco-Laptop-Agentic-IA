@@ -1,0 +1,35 @@
+/* Figma : Hooka/Chargement (9:136) */
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.message {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* Les pupilles regardent de gauche à droite (DS : mouvement vers la droite) */
+.pupils {
+  animation: look 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes look {
+  from {
+    transform: translateX(-2.6px);
+  }
+  to {
+    transform: translateX(1px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pupils {
+    animation: none;
+  }
+}

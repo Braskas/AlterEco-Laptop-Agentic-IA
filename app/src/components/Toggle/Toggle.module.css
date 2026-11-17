@@ -1,0 +1,54 @@
+/* Figma : Hooka/Toggle (9:158) — 52 × 32 */
+.toggle {
+  position: relative;
+  width: 52px;
+  height: 32px;
+  flex-shrink: 0;
+  padding: 0;
+  border: var(--stroke-1) solid var(--ink);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  cursor: pointer;
+  transition: background 0.18s ease-out;
+}
+
+/* Cible tactile de 48 px autour de la piste */
+.toggle::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+}
+
+.knob {
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--ink);
+  transform: translateY(-50%);
+  transition:
+    left 0.18s ease-out,
+    background 0.18s ease-out;
+}
+
+.toggle[aria-checked="true"] {
+  background: var(--ink);
+}
+
+.toggle[aria-checked="true"] .knob {
+  left: calc(100% - 25px);
+  background: var(--surface);
+}
+
+.toggle:focus-visible {
+  outline: var(--stroke-2) solid var(--focus);
+  outline-offset: 3px;
+}
+
+.toggle:disabled {
+  border-style: dashed;
+  cursor: not-allowed;
+  opacity: 0.6;
+}

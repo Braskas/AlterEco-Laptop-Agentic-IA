@@ -1,0 +1,6 @@
+/* Réserve DS autour du logo : au moins space-5. À gérer par le parent ; ici on évite juste l'étirement. */
+.wordmark {
+  display: block;
+  height: auto;
+  max-width: none;
+}

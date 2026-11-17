@@ -31,6 +31,25 @@ npm run build
 | `src/data/api/` | Seule porte d'accès aux données | À réécrire, mêmes signatures, pour brancher une vraie API. |
 | `src/engine/recommend.ts` | Moteur (§7) : une carte ou un refus | Fonction pure, testée. |
 
+## Composants Figma → code
+
+| Figma (02 Composants) | Code | Figma | Code |
+| --- | --- | --- | --- |
+| Hooka/Button | `Button` | Hooka/HookCard | `HookCard` (reçoit la `Card` du moteur) |
+| Hooka/Chip | `Chip` | Hooka/DoubleBonus | `DoubleBonus` |
+| Hooka/Icône/* | `Icon` + lucide-react | Hooka/PastilleSource | `SourceBadge` |
+| Hooka/Logo | `Logo` | Hooka/TrustSheet | `TrustSheet` |
+| Hooka/Champ | `Field` | Hooka/FeuillePermission | `PermissionSheet` |
+| Hooka/Option | `Option` | Hooka/Poignée | `Handle` (dans `Sheet`) |
+| Hooka/Toggle | `Toggle` | Hooka/Bandeau | `Banner` |
+| Hooka/Progression | `Progress` | Hooka/Toast | `Toast` |
+| Hooka/EnTête | `Header` | Hooka/Chargement | `Loader` |
+| Hooka/StatusBar | `StatusBar` (desktop) | Hooka/ÉtatVide | `EmptyState` |
+| Hooka/HomeIndicator | `HomeIndicator` (desktop) | Hooka/LigneListe | `ListRow` |
+| Hooka/Notification | `Notification` | Hooka/LigneHistorique | `HistoryRow` |
+
+`Sheet` n'existe pas dans Figma : c'est la base commune des deux feuilles (voile, Échap, poignée).
+
 ## Tokens
 
 `src/styles/global.css` importe `../design-system/tokens.css`. On ne recopie jamais une couleur ou une

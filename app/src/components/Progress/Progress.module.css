@@ -1,0 +1,16 @@
+/* Figma : Hooka/Progression (7:94) */
+.progress {
+  display: flex;
+  gap: var(--space-1);
+  height: 4px;
+}
+
+.segment {
+  flex: 1;
+  border-radius: 2px;
+  background: var(--hairline);
+}
+
+.done {
+  background: var(--ink);
+}

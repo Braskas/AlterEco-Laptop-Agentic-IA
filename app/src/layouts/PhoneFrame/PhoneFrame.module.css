@@ -15,19 +15,28 @@
   color: var(--ink);
 }
 
+/* Barre d'état et indicateur d'accueil : maquette desktop uniquement */
+.deviceChrome {
+  display: none;
+}
+
+.header {
+  padding: 0 var(--space-4);
+}
+
 .content {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
-  padding: var(--space-5) var(--space-4);
+  gap: var(--space-4);
+  padding: var(--space-4);
   overflow-y: auto;
 }
 
 .footer {
   display: grid;
   gap: var(--space-3);
-  padding: var(--space-4) var(--space-4) var(--space-6);
+  padding: var(--space-4);
 }
 
 /* Desktop : maquette centrée à la taille Figma */
@@ -44,5 +53,9 @@
     border-radius: 44px;
     box-shadow: var(--lift);
     overflow: hidden;
+  }
+
+  .deviceChrome {
+    display: flex;
   }
 }

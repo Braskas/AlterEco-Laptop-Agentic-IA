@@ -49,6 +49,44 @@
   gap: var(--space-5);
 }
 
+.column {
+  display: grid;
+  gap: var(--space-2);
+  max-width: 361px;
+}
+
 .name {
   width: 80px;
+}
+
+/* Les composants mobiles sont montrés à leur largeur Figma (361 px) */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 361px), 361px));
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.stack {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.inkTile {
+  display: inline-block;
+  padding: var(--space-5);
+  background: var(--violet);
+  border-radius: var(--radius-md);
+}
+
+.phoneStrip {
+  width: min(100%, 393px);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.pad {
+  padding: 0 var(--space-4);
 }

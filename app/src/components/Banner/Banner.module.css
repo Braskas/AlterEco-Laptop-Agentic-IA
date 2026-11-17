@@ -1,0 +1,30 @@
+/* Figma : Hooka/Bandeau (9:130) */
+.banner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+}
+
+.banner > svg {
+  flex-shrink: 0;
+}
+
+.attention {
+  background: var(--blush);
+  color: var(--on-blush);
+}
+
+.info {
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--hairline);
+}
+
+.message {
+  flex: 1;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 24px;
+}
